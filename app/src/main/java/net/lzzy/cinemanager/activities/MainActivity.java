@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tvTitle;
     private View layoutMenu;
     private SearchView search;
-    private FragmentManager manager;
+    private FragmentManager manager=getSupportFragmentManager();
 
 
     @Override
