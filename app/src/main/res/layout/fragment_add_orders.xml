@@ -5,10 +5,8 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/fragment_orders_tv"
+        android:id="@+id/fragment_add_orders_et"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:text="我的订单" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

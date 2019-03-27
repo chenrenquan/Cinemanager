@@ -17,14 +17,15 @@ import net.lzzy.cinemanager.R;
  * Description:
  */
 public class OrdersFragment extends Fragment {
-    public OrdersFragment(){}
+    public OrdersFragment() {
+    }
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View view=inflater.inflate(R.layout.fragment_orders,null);
-        TextView te=view.findViewById(R.id.fragment_orders_tv);
+        View view = inflater.inflate(R.layout.fragment_orders, null);
+        TextView te = view.findViewById(R.id.fragment_orders_tv);
         return view;
     }
 }

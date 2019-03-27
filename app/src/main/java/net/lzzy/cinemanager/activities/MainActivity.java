@@ -1,10 +1,13 @@
 package net.lzzy.cinemanager.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 
 import android.os.Bundle;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.Window;
 
@@ -13,6 +16,9 @@ import android.widget.TextView;
 
 import net.lzzy.cinemanager.R;
 import net.lzzy.cinemanager.fragments.CinemasFragment;
+import net.lzzy.cinemanager.fragments.OrdersFragment;
+
+import java.util.ArrayList;
 
 /**
  * @author Administrator
@@ -21,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tvTitle;
     private View layoutMenu;
     private SearchView search;
-    private FragmentManager manager=getSupportFragmentManager();
+    private FragmentManager manager = getSupportFragmentManager();
+    private SparseArray<Fragment> fragmentArray = new SparseArray<>();
 
 
     @Override
@@ -52,26 +59,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         layoutMenu.setVisibility(View.GONE);
-        switch (v.getId()) {
+        FragmentTransaction transaction = manager.beginTransaction();
+        Fragment fragment = fragmentArray.get(v.getId());
+        if (fragment == null) {
+            fragment = createFragment(v.getId());
+            fragmentArray.put(v.getId(), fragment);
+            transaction.add(R.id.activity_main_title,fragment);
+        }
+        for (Fragment f : manager.getFragments()) {
+            transaction.hide(f);
+        }
+        transaction.show(fragment).commit();
+
+    }
+
+    private Fragment createFragment(int id) {
+        switch (id) {
             case R.id.bar_title_tv_add_cinema:
-                break;
+                return new CinemasFragment();
             case R.id.bar_title_tv_view_cinema:
-                tvTitle.setText("影院列表");
-                manager.beginTransaction()
-                        .replace(R.id.activity_main_title, new CinemasFragment())
-                        .commit();
-                break;
+                return new CinemasFragment();
             case R.id.bar_title_tv_add_order:
-                break;
+                return new OrdersFragment();
             case R.id.bar_title_tv_view_order:
-                tvTitle.setText("我的订单");
-                manager.beginTransaction()
-                        .replace(R.id.activity_main_title, new CinemasFragment())
-                        .commit();
-                break;
+                return new OrdersFragment();
             default:
                 break;
-
         }
+        return null;
     }
 }

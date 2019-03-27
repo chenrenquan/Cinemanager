@@ -8,9 +8,10 @@
 
     <FrameLayout
         android:id="@+id/activity_main_title"
-        android:layout_marginTop="@dimen/bar_height"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    <include layout="@layout/bar_title"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/bar_height" />
+
+    <include layout="@layout/bar_title" />
 
 </FrameLayout>
