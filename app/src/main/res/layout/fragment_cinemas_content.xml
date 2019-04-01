@@ -7,7 +7,7 @@
         android:id="@+id/activity_cinema_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp" />
 
     <TextView
         android:id="@+id/activity_cinemas_tv_none"
@@ -15,5 +15,9 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="暂无数据，请添加数据" />
+
+    <include
+        layout="@layout/fragment_add_cinema"
+        android:visibility="gone" />
 
 </FrameLayout>

@@ -10,15 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import net.lzzy.cinemanager.R;
 
 import java.util.Objects;
 
+
 /**
- *
- * @author lzzy_gxy
- * @date 2019/3/27
- * Description:
+ * @author Administrator
  */
 public abstract class BaseFragment extends Fragment {
     public BaseFragment(){}
@@ -27,28 +24,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(getLayoutRes(),container,false);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     @Override
@@ -61,11 +36,12 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract void populate();
 
-
     public abstract int getLayoutRes();
     < T extends View>T find(@IdRes int id) {
         return Objects.requireNonNull(getView()).findViewById(id);
     }
+
+    public abstract void search(String kw);
 }
 
 

@@ -1,25 +1,46 @@
 package net.lzzy.cinemanager.fragments;
 
 
-import android.widget.EditText;
+import android.content.Context;
+
 
 import net.lzzy.cinemanager.R;
 
+
 /**
- *
- * @author lzzy_gxy
- * @date 2019/3/27
- * Description:
+ * @author Administrator
  */
 public class OrdersAddFragment extends BaseFragment {
+    private OnFragmentInteractionListener listener;
 
     @Override
     protected void populate() {
-        EditText edt=find(R.id.fragment_add_orders_et);
+        listener.hideSearch();
     }
 
     @Override
     public int getLayoutRes() {
         return R.layout.fragment_add_orders;
+    }
+
+    @Override
+    public void search(String kw) {
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            listener = (OnFragmentInteractionListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + "必须实现OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 }
