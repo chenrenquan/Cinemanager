@@ -66,8 +66,12 @@ public class OrderFactory {
         return true;
     }
 
-    public boolean delete(Order order){
-        repository.delete(order);
-        return true;
+    public boolean delete(Order order) {
+        try {
+            repository.delete(order);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
