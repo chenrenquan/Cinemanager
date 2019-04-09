@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/cinemas_menu_item"
             android:textSize="20sp"
-            tools:text="123" />
+            tools:text="夏目友人帐" />
 
         <TextView
             android:id="@+id/order_items_location"

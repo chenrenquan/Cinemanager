@@ -5,12 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-
-    <FrameLayout
-        android:id="@+id/activity_main_title"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/bar_height" />
+  <FrameLayout
+      android:id="@+id/fragment_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="@dimen/bar_height"/>
 
     <include layout="@layout/bar_title" />
 

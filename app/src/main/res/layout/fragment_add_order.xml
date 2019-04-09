@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@color/color2"
+        android:background="@color/color3"
         android:gravity="center"
         android:text="新订单"
         android:textColor="@android:color/black"
@@ -21,7 +21,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/dialog_add_order_edt_name"
+            android:id="@+id/fragment_add_order_edt_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -30,7 +30,7 @@
 
 
         <RelativeLayout
-            android:id="@+id/dialog_add_order_Time"
+            android:id="@+id/fragment_add_order_Time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp">
@@ -47,7 +47,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/dialog_add_tv_Time"
+                    android:id="@+id/fragment_add_tv_Time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -59,19 +59,18 @@
         </RelativeLayout>
 
         <Spinner
-            android:id="@+id/dialog_add_order_spinner"
+            android:id="@+id/fragment_add_order_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/dialog_add_order_price"
+            android:id="@+id/fragment_add_order_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:layout_margin="5dp"
             android:background="@color/color1"
-            android:hint="请输入票价" />
-
+            android:hint="请输入票价"
+            android:inputType="numberDecimal" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -80,21 +79,21 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/dialog_add_order_btn_code"
+                android:id="@+id/fragment_add_order_btn_code"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="生产二维码" />
 
             <Button
-                android:id="@+id/dialog_add_order_btn_save"
+                android:id="@+id/fragment_add_order_btn_save"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="保存" />
 
             <Button
-                android:id="@+id/dialog_add_order_btn_cancel"
+                android:id="@+id/fragment_add_order_btn_cancel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -102,22 +101,18 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/activity_main_Img_code"
+                android:id="@+id/fragment_main_Img_code"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:src="@drawable/code" />
+                android:gravity="center" />
         </LinearLayout>
 
-
     </LinearLayout>
-
 
 </LinearLayout>
